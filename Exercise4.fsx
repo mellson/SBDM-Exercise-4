@@ -11,7 +11,7 @@ let addAllFiles() =
     let path = sprintf "measurements/sorted100MSplit_%d" i
     measurements <- Seq.append measurements (Measurement.Load(path).Rows)
 
-let data = measurements |> Seq.take(1000000)
+let data = measurements |> Seq.take(10000)
 
 type Reading = { Property: bool; Value: decimal; Timestamp: int }
 type Plug = { id: int; Readings: HashSet<Reading> }
@@ -21,7 +21,6 @@ type House = { id: int; HouseHolds: Dictionary<int, HouseHold> }
 let houses = new Dictionary<int, House>()
 
 for m in data do
-  printfn "%A" m
   let reading = { Property = m.Property; Value = m.Value; Timestamp = m.Timestamp }
   let readings = new HashSet<Reading>()
   readings.Add(reading) |> ignore

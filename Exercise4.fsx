@@ -1,8 +1,11 @@
 ﻿#r "../packages/FSharp.Data.2.1.0/lib/net40/FSharp.Data.dll"
+#time
+
 open FSharp.Data
 open System.Collections.Generic
+open System.IO
 
-type Measurement = CsvProvider<"sorted100M_sample.csv",CacheRows=false>
+type Measurement = CsvProvider<"sorted100M_sample.csv">
 let mutable measurements = Measurement.Load("measurements/sorted100MSplit_1").Rows
 
 let addAllFiles() =
@@ -11,7 +14,22 @@ let addAllFiles() =
     let path = sprintf "measurements/sorted100MSplit_%d" i
     measurements <- Seq.append measurements (Measurement.Load(path).Rows)
 
-let data = measurements |> Seq.take(10000)
+//addAllFiles()
+
+measurements |> Seq.head
+
+let data = measurements |> Seq.take(1000)
+
+let missingMeasurementsFile = new StreamWriter("missing_measurements.csv")
+let mutable prevTimestamp = (data |> Seq.head).Timestamp
+for m in data do
+  if ((prevTimestamp + 1) < m.Timestamp) then
+    printf "%A" m
+    missingMeasurementsFile.WriteLine(sprintf "%A" m)
+    prevTimestamp <- m.Timestamp
+  else
+    prevTimestamp <- m.Timestamp
+missingMeasurementsFile.Close
 
 type Reading = { Property: bool; Value: decimal; Timestamp: int }
 type Plug = { id: int; Readings: HashSet<Reading> }

@@ -9,10 +9,11 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>SBDM_Exercise_4</RootNamespace>
     <AssemblyName>SBDM_Exercise_4</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.3</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
     <Name>SBDM-Exercise-4</Name>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,8 +32,9 @@
     <Optimize>true</Optimize>
     <Tailcalls>true</Tailcalls>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <WarningLevel>3</WarningLevel>
+    <DefineConstants>
+    </DefineConstants>
+    <WarningLevel>0</WarningLevel>
     <PlatformTarget>x64</PlatformTarget>
     <DocumentationFile>bin\Release\SBDM_Exercise_4.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
@@ -54,37 +56,189 @@
   </Choose>
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
-    <None Include="sorted100M.csv" />
     <None Include="sorted100M_sample.csv" />
     <Compile Include="AssemblyInfo.fs" />
     <None Include="Exercise4.fsx" />
+    <Compile Include="LoadMeasurements.fs" />
+    <Compile Include="SingleHouseData.fs" />
+    <Compile Include="FindMissingValues.fs" />
+    <None Include="Charts.fsx" />
+    <Compile Include="Consumption.fs" />
     <Compile Include="Program.fs" />
     <None Include="App.config" />
     <Content Include="packages.config" />
+    <Content Include="measurements\sorted100MSplit_1">
+      <Link>sorted100MSplit_1</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_2">
+      <Link>sorted100MSplit_2</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_3">
+      <Link>sorted100MSplit_3</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_4">
+      <Link>sorted100MSplit_4</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_5">
+      <Link>sorted100MSplit_5</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_6">
+      <Link>sorted100MSplit_6</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_7">
+      <Link>sorted100MSplit_7</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_8">
+      <Link>sorted100MSplit_8</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_9">
+      <Link>sorted100MSplit_9</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_10">
+      <Link>sorted100MSplit_10</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_11">
+      <Link>sorted100MSplit_11</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_12">
+      <Link>sorted100MSplit_12</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_13">
+      <Link>sorted100MSplit_13</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_14">
+      <Link>sorted100MSplit_14</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_15">
+      <Link>sorted100MSplit_15</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_16">
+      <Link>sorted100MSplit_16</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_17">
+      <Link>sorted100MSplit_17</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_18">
+      <Link>sorted100MSplit_18</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_19">
+      <Link>sorted100MSplit_19</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_20">
+      <Link>sorted100MSplit_20</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_21">
+      <Link>sorted100MSplit_21</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_22">
+      <Link>sorted100MSplit_22</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_23">
+      <Link>sorted100MSplit_23</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_24">
+      <Link>sorted100MSplit_24</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_25">
+      <Link>sorted100MSplit_25</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_26">
+      <Link>sorted100MSplit_26</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_27">
+      <Link>sorted100MSplit_27</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_28">
+      <Link>sorted100MSplit_28</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_29">
+      <Link>sorted100MSplit_29</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_30">
+      <Link>sorted100MSplit_30</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_31">
+      <Link>sorted100MSplit_31</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_32">
+      <Link>sorted100MSplit_32</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_33">
+      <Link>sorted100MSplit_33</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_34">
+      <Link>sorted100MSplit_34</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_35">
+      <Link>sorted100MSplit_35</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_36">
+      <Link>sorted100MSplit_36</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_37">
+      <Link>sorted100MSplit_37</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_38">
+      <Link>sorted100MSplit_38</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_39">
+      <Link>sorted100MSplit_39</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_40">
+      <Link>sorted100MSplit_40</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="measurements\sorted100MSplit_41">
+      <Link>sorted100MSplit_41</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="FileHelpers">
-      <HintPath>..\packages\FileHelpers-Stable.2.9.9\lib\4.0\FileHelpers.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FileHelpers.DataLink">
-      <HintPath>..\packages\FileHelpers-Stable.2.9.9\lib\4.0\FileHelpers.DataLink.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FileHelpers.ExcelStorage">
-      <HintPath>..\packages\FileHelpers-Stable.2.9.9\lib\4.0\FileHelpers.ExcelStorage.dll</HintPath>
+    <Reference Include="FSharp.Charting">
+      <HintPath>..\packages\FSharp.Charting.0.90.7\lib\net40\FSharp.Charting.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FSharp.Data">
       <HintPath>..\packages\FSharp.Data.2.1.0\lib\net40\FSharp.Data.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Interop.Excel">
-      <HintPath>..\packages\FileHelpers-Stable.2.9.9\lib\4.0\Interop.Excel.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Interop.Office">
-      <HintPath>..\packages\FileHelpers-Stable.2.9.9\lib\4.0\Interop.Office.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib" />
@@ -93,6 +247,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>

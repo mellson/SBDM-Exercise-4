@@ -43,7 +43,6 @@ for m in data do
   let readings = new HashSet<Reading>()
   readings.Add(reading) |> ignore
   let plug = { Plug.id = m.Plug_id; Plug.Readings = readings }
-
   if houses.ContainsKey m.House_id then
     let house = houses.[m.House_id]    
     if house.HouseHolds = null then house.HouseHolds = new Dictionary<int, HouseHold>() |> ignore    

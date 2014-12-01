@@ -29,3 +29,5 @@ let getSampleForScript n =
       for measurement in loadMeasurementPart (sprintf "measurements/%s" path) |> Seq.where (fun m -> m.House_id = 1) |> Seq.truncate n do
         yield measurement
   }
+
+let getHouse10 = Measurement.Load("house_10_measurements.csv").Rows
